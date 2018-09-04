@@ -3,6 +3,7 @@ import { UserDesignIdeasComponent } from './user-design-ideas.component';
 import { RouterModule } from '../../../node_modules/@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '../../../node_modules/@angular/http';
+import { UserDesignService } from '../services/user-design-ideas.service';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { HttpModule } from '../../../node_modules/@angular/http';
     UserDesignIdeasComponent
   ],
   providers: [
+    UserDesignService
   ]
 })
 export class UserDesignIdeasModule { }

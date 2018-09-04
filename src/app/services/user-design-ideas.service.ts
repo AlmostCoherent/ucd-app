@@ -7,17 +7,19 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import { HttpErrorResponse } from "@angular/common/http/src/response";
+// import {  } from "";
 
 @Injectable()
 
 export class UserDesignService {
 
-    private _productUrl = "../../../api/userideas.json";
+    private _productUrl = "https://jsonplaceholder.typicode.com/todos";
 
     constructor(private _http: HttpClient){}
 
     getUserIdeas() : Observable<UserDesignIdea[]> {
-        return this._http.get<UserDesignIdea[]>(this._productUrl)
+        return this._http.get<any>(this._productUrl)
+            .map(res => res.json())
             .do(data => console.log('ALL: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }

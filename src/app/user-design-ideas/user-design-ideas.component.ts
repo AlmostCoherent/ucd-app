@@ -11,7 +11,7 @@ import { UserDesignService } from '../services/user-design-ideas.service';
 })
 export class UserDesignIdeasComponent implements OnInit {
 
-  userFeedback: UserDesignIdea[];
+  userFeedback: any;
   pageTitle: string = 'User Centered Design';
   loopingList: string[];
   errorMessasge: string;

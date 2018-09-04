@@ -17,7 +17,8 @@ import { UserDesignIdeasComponent } from './user-design-ideas/user-design-ideas.
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '**', component: UserDesignIdeasComponent }
+      { path: 'design-ideas', component: UserDesignIdeasComponent },
+      { path: '', component: UserDesignIdeasComponent }
     ]),
     UserDesignIdeasModule
   ],
