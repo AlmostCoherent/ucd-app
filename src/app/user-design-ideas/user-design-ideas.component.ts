@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 import { UserDesignIdea } from './user-design-ideal.model';
-import { UserDeisgnService } from '../services/user-design-ideas.service';
+import { UserDesignService } from '../services/user-design-ideas.service';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class UserDesignIdeasComponent implements OnInit {
   loopingList: string[];
   errorMessasge: string;
 
-  constructor(private _userDesignService: UserDeisgnService) { 
+  constructor(private _userDesignService: UserDesignService) { 
   }
 
   ngOnInit() : void {

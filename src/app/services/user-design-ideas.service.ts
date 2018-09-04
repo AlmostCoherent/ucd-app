@@ -10,9 +10,9 @@ import { HttpErrorResponse } from "@angular/common/http/src/response";
 
 @Injectable()
 
-export class UserDeisgnService {
+export class UserDesignService {
 
-    private _productUrl = "./api/products/userideas.json";
+    private _productUrl = "../../../api/userideas.json";
 
     constructor(private _http: HttpClient){}
 
