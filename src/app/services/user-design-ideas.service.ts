@@ -13,13 +13,13 @@ import { HttpErrorResponse } from "@angular/common/http/src/response";
 
 export class UserDesignService {
 
-    private _productUrl = "https://jsonplaceholder.typicode.com/todos";
+    // private _productUrl = "https://jsonplaceholder.typicode.com/todos";
+    private _productUrl = "./api/userideas.json";
 
     constructor(private _http: HttpClient){}
 
     getUserIdeas() : Observable<UserDesignIdea[]> {
         return this._http.get<any>(this._productUrl)
-            .map(res => res.json())
             .do(data => console.log('ALL: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }

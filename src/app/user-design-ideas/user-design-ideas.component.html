@@ -1,8 +1,10 @@
 <h3>
   Welcome to {{ pageTitle }}!
 </h3>
-<table>
-  <tr *ngFor="let item of loopingList">
-    <td>{{item}}</td>
-  </tr>  
-</table>
+<div class="card card-default" *ngIf="userFeedback && userFeedback.length">
+  <div *ngFor="let item of userFeedback">
+    <div>{{ item.userName }}</div>
+    <div class="card-heading">{{ item.feedbackTitle }}</div>
+    <div class="card-body">{{ item.feedbackBody }}</div>
+  </div>  
+</div>
