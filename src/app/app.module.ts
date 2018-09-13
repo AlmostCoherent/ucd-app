@@ -5,8 +5,8 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
-import { UserDesignIdeasModule } from './user-design-ideas/user-design-ideas.module';
-import { UserDesignIdeasComponent } from './user-design-ideas/user-design-ideas.component';
+import { UserDesignIdeasModule } from './components/user-design-ideas/user-design-ideas.module';
+import { UserDesignIdeasComponent } from './components/user-design-ideas/user-design-ideas.component';
 
 @NgModule({
   declarations: [

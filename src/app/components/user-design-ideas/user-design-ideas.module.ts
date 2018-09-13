@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { UserDesignIdeasComponent } from './user-design-ideas.component';
-import { RouterModule } from '../../../node_modules/@angular/router';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '../../../node_modules/@angular/http';
-import { UserDesignService } from '../services/user-design-ideas.service';
+import { HttpModule } from '@angular/http';
+import { UserDesignService } from '../../services/user-design-ideas.service';
+import { UserVotesModule } from '../user-votes/user-votes.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { UserDesignService } from '../services/user-design-ideas.service';
       { path: 'feedback', component: UserDesignIdeasComponent }
     ]),
     CommonModule,
-    HttpModule
+    HttpModule,
+    UserVotesModule
   ],
   declarations: [
     UserDesignIdeasComponent

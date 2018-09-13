@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
-import { UserDesignIdea } from './user-design-ideal.model';
-import { UserDesignService } from '../services/user-design-ideas.service';
+import { IUserDesignIdea } from './user-design-idea.model';
+import { UserDesignService } from '../../services/user-design-ideas.service';
 
 
 @Component({
@@ -11,22 +11,26 @@ import { UserDesignService } from '../services/user-design-ideas.service';
 })
 export class UserDesignIdeasComponent implements OnInit {
 
-  userFeedback: any;
+  userFeedback: IUserDesignIdea[];
   pageTitle: string = 'User Centered Design';
   loopingList: string[];
   errorMessasge: string;
+  randomUserIdea: IUserDesignIdea;
 
   constructor(private _userDesignService: UserDesignService) { 
   }
 
   ngOnInit() : void {
-    this.loopingList = ["One", "Two", "Three"];
-
     this._userDesignService.getUserIdeas().subscribe(
       ideas => this.userFeedback = ideas,
       error => this.errorMessasge = <any>error);
-
+      
     console.log(this.userFeedback);
+  }
+
+  onVoteClicked(message: number): void {
+    let itemIndex = this.userFeedback.findIndex(i => i.feedbackId == message);
+    this.userFeedback[itemIndex].feedbackVotes = this.userFeedback[itemIndex].feedbackVotes + 1;
   }
 
 }

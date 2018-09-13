@@ -1,0 +1,15 @@
+<h3>
+  Welcome to {{ pageTitle }}!
+</h3>
+<div *ngIf="userFeedback && userFeedback.length">
+  <div class="card card-default" *ngFor="let item of userFeedback">
+    <div class="card-title">{{ item.userName }}: {{ item.feedbackTitle }} 
+      <user-votes 
+        [index]='item.feedbackId' 
+        [votes]='item.feedbackVotes'
+        (voteClicked)='onVoteClicked($event)'>
+      </user-votes>
+    </div>
+    <div class="card-body">{{ item.feedbackBody }}</div>
+  </div>  
+</div>

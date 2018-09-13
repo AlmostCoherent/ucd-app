@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { UserDesignIdea } from "../user-design-ideas/user-design-ideal.model";
+import { IUserDesignIdea } from "../components/user-design-ideas/user-design-idea.model";
 import { Observable } from "rxjs";
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
@@ -18,15 +18,15 @@ export class UserDesignService {
 
     constructor(private _http: HttpClient){}
 
-    getUserIdeas() : Observable<UserDesignIdea[]> {
-        return this._http.get<any>(this._productUrl)
+    getUserIdeas() : Observable<IUserDesignIdea[]> {
+        return this._http.get<IUserDesignIdea[]>(this._productUrl)
             .do(data => console.log('ALL: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
-    getuserIdea(id: number) : Observable<UserDesignIdea> {
+    getuserIdea(id: number) : Observable<IUserDesignIdea> {
         return this.getUserIdeas()
-                .map((products: UserDesignIdea[]) => products.find(p => p.userNumber === id))
+                .map((products: IUserDesignIdea[]) => products.find(p => p.userNumber === id))
     }
 
     private handleError(err: HttpErrorResponse){

@@ -1,0 +1,21 @@
+a {
+    display: inline;
+}
+
+div {
+    background-color: aqua;
+    display: inline;
+}
+
+.vote-container {
+    border: 1px solid white;
+    height: 40px;
+    width: 70px;
+    float: right;
+    text-align: center;
+    margin: 5px;
+}
+
+.vote-value {
+    padding-right: 10px;
+}
